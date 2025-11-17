@@ -49,3 +49,9 @@ def test_negative_username(login_page, user, password, expect):
 
     login_page.login(user, password)
     login_page.check_that_error_is_visible(expect)
+
+
+@pytest.fixture()
+def test_login(login_page, success_page):
+    login_page.open("https://practicetestautomation.com/practice-test-login/")
+    login_page.login("student", "Password123")
